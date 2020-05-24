@@ -1,0 +1,154 @@
+// Variables
+$neon: #2196f3;
+$blue: #4281f5;
+$darkBlue: #030ffc;
+$lightBlue: #00f2fe;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+// Logo
+.logo {
+  position: fixed;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-style: italic;
+  span {
+    color: $neon;
+  }
+}
+
+// Navbar Toggler
+.navbar-toggler {
+  position: fixed;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  right: 10px;
+  font-size: 2rem;
+  display: none;
+}
+
+// Header
+.header {
+  background: url("images/Beach.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  .header-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: justify;
+
+    p {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 3px;
+    }
+
+    .get-started-btn {
+      padding: 13px 25px;
+      cursor: pointer;
+      background: none;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: 2px solid #fff;
+      margin-top: 30px;
+      &:hover {
+        background: $neon;
+        transition: 0.5s;
+        border-color: $neon;
+      }
+    }
+  }
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  background: #000;
+  z-index: 1;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.5s;
+
+    li {
+      padding: 20px;
+      &:hover {
+        background: $neon;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 875px) {
+  nav {
+    background: #000;
+    ul {
+      flex-direction: column;
+      max-height: 0px;
+
+      li {
+        text-align: center;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    display: block;
+    z-index: 2;
+  }
+
+  .showing {
+    max-height: 20em;
+  }
+
+  .header {
+    .header-content {
+      text-align: center;
+
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      p {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+}
